@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<title>To-Do list</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="/png/favicon.png"/>
+<meta name="viewport" content="480, initial-scale=1.0">
+
+<main class="card">
+    <ul style="margin-bottom: 36px;">
+        <% if (tasks) { %>
+            <% tasks.forEach(function(task) { 
+                if (task.done) { %>
+                <li class="done"><span><%= task.text %></span><button name="remove"><i class="material-icons">close</i></button></li>
+            <% } else { %>
+                <li><span><%= task.text %></span><button name="remove"><i class="material-icons">close</i></button></li>
+            <% }}); %>
+        <% } %>
+    </ul>
+    <div style="display: flex;" class="form">
+        <input style="flex-grow: 2;" name="text" placeholder="Введите текст задачи..">
+        <button class="btn btn-primary" name="add">Добавить</button>
+    </div>
+    <button style="margin-top: 24px;" class="btn btn-default" name="logout"><i style="margin-right: 20px; height: 100%;" class="material-icons">exit_to_app</i>Выйти</button>
+</main>
+
+<div id="alerts"></div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="js/alert.js"></script>
+<script src="js/app.js"></script>

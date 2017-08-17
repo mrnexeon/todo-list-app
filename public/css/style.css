@@ -1,0 +1,276 @@
+@import url('reset.css');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #ECF0F1;
+    padding: 16px;
+}
+
+.card {
+    padding: 36px 32px;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 18px;
+    font-weight: 300;
+    color: #2c3e50;
+}
+
+small {
+    text-align: center;
+    display: block;
+    color: gray;
+    margin-bottom: 36px;
+}
+
+i {
+    background-repeat: no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+i.google-icon {
+    background-image: url('../png/google.png');
+}
+
+i.fb-icon {
+    background-image: url('../png/facebook.png');
+}
+
+i.twitter-icon {
+    background-image: url('../png/twitter.png');
+}
+
+/* Buttons */
+
+.btn {
+    border: none;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #34495e;
+}
+
+.btn-primary:active {
+    color: black;
+    background-color: lightgray;
+}
+
+.btn-default {
+    background-color: white;
+    color: #34495e;
+    border: 1px solid #34495e;
+}
+
+.btn-default:hover {
+    background-color: rgba(0, 0, 0, .1);
+    color: #2c3e50;
+    border: 1px solid #2c3e50;
+}
+
+.btn-default:active {
+    color: white;
+    background-color: #2c3e50;
+}
+
+@media only screen and (max-width: 480px) {
+    main {
+        padding: 24px;
+        overflow: hidden;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    button[name="add"] {
+        margin-top: 12px;
+        justify-content: center;
+    }
+
+    .powered {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    main {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    button[name="add"] {
+        margin-left: 16px;
+    }
+}
+
+/* Loader spinner */
+
+.loader {
+    z-index: 2;
+    border: 6px solid lightgray;
+    border-top: 6px solid #2c3e50;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    animation: spin .35s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* List and list-items */
+
+li {
+    list-style: none;
+    padding: 14px 36px;
+    padding-right: 54px;
+    border-bottom: 1px solid lightgray;
+    overflow: hidden;
+    position: relative;
+    line-height: 18px;
+}
+
+li button[name="remove"] {
+    display: none;
+}
+
+button[name="remove"] i {
+    font-size: 18px;
+}
+
+li:hover button[name="remove"] {
+    z-index: 9999;
+    padding: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    color: black;
+}
+
+li.done:hover button[name="remove"] {
+    color: white;
+}
+
+li:hover button[name="remove"]:hover {
+    background-color: #e74c3c;
+    cursor: pointer;
+    color: white;
+}
+
+li button[name="remove"]:focus {
+    outline: none;
+}
+
+li:last-child {
+    border: none;
+}
+
+li:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+li.done {
+    background-color: #27ae60;
+    color: white;
+    text-decoration: line-through;
+}
+
+li.done::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 12px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 12px;
+    width: 6px;
+}
+
+input {
+    display: block;
+    border: 1px solid gray;
+    color: gray;
+    font-size: 16px;
+    padding: 14px 20px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid black;
+    color: black;
+}
+
+.powered img {
+   filter: grayscale(100%) ;
+   opacity: .5;
+}
+
+.powered img:hover {
+    filter: none;
+    opacity: .75;
+    cursor: pointer;
+}
+
+/* Alert Box */ 
+
+#alerts {
+    font-family: 'Roboto';
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.alert {
+    background-color: #e74c3c;
+    color: white;
+    padding: 18px 32px;
+    margin-bottom: 8px;
+}
+
+.alert b {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+}

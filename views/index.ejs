@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<title>Planner</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,300&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="/png/favicon.png"/>
+
+<meta name="viewport" content="500, initial-scale=1.0">
+
+<main style="position: relative; display: flex; flex-direction: column; align-items: center;" class="card">
+    <h1>Ваш личный список дел</h1>
+    <small>Пожалуйста, войдите чтобы продолжить..</small>
+
+    <input style="width: 250px; box-sizing: border-box; margin-bottom: 16px;" name="nickname" placeholder="Ваш логин.." required></input>
+    <button style="width: 250px; justify-content: center; margin-bottom: 32px" class="btn btn-primary" name="sign-in" provider="guest">Войти как гость</button>
+
+    <button style="width: 250px; margin-bottom: 12px;" class="btn btn-primary" name="sign-in" provider="google">
+        <i style="margin-right: 24px;" class="google-icon"></i>
+         <span>Sign in with Google</span>
+    </button>
+    <button style="width: 250px;" class="btn btn-primary" name="sign-in" provider="twitter">
+        <i style="margin-right: 24px;" class="twitter-icon"></i>
+        <span>Sign in with Twitter</span>
+    </button>
+    <div style="width: 100%; display: flex; align-items: center; justify-content: space-around; margin-top: 64px;" class="powered">
+        <img width="100px" src="https://cdn.b12.io/client_media/ZTxl6ZYR/5bb16c86-c6c9-11e6-a042-0242ac110002.firebase-transparent-tinypng.png">
+        <img width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/2000px-Node.js_logo_2015.svg.png">
+        <img width="100px" src="https://webassets.mongodb.com/_com_assets/cms/mongodb-logo-rgb-j6w271g1xn.jpg">
+    </div>
+</main>
+
+<div id="alerts"></div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script src="js/alert.js"></script>
+<script src="js/auth.js"></script>
